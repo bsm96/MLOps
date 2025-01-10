@@ -7,6 +7,7 @@
 import matplotlib.pyplot as plt
 import torch
 import typer
+
 from my_project.data import corrupt_mnist
 from my_project.model import MyAwesomeModel
 
@@ -15,6 +16,7 @@ DEVICE = torch.device("cuda" if torch.cuda.is_available() else "mps" if torch.ba
 
 # Create a Typer app
 app = typer.Typer()
+
 
 # Command to train the model
 @app.command()
@@ -67,6 +69,7 @@ def train(lr: float = 1e-3, batch_size: int = 32, epochs: int = 3) -> None:
     axs[1].set_title("Train accuracy")
     fig.savefig("training_statistics.png")
 
+
 # Command to evaluate the model
 @app.command()
 def evaluate(model_checkpoint: str) -> None:
@@ -93,6 +96,7 @@ def evaluate(model_checkpoint: str) -> None:
 
     # Print the test accuracy
     print(f"Test accuracy: {correct / total}")
+
 
 # Run the Typer app
 if __name__ == "__main__":

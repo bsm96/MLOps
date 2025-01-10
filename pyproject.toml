@@ -28,5 +28,11 @@ dev = {file = ['requirements_dev.txt']}
 [tool.ruff]
 line-length = 120
 
+[tool.ruff.lint]
+select = ["I"]
+
 [tool.coverage.run]
 omit = ["tests/*"]
+
+[project.scripts]
+train = "my_project.train:main"

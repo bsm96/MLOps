@@ -1,8 +1,9 @@
 ### To run this file: /opt/anaconda3/bin/python "/Users/bsm/Library/CloudStorage/OneDrive-DanmarksTekniskeUniversitet/DTU/5. semester/02476 Machine Learning Operations/MLOps/src/my_project/data.py" "data/corruptedmnist" "data/processed"
 
+import os
+
 import torch
 import typer
-import os
 
 
 def normalize(images: torch.Tensor) -> torch.Tensor:
